@@ -182,13 +182,15 @@ public void quitSafely() {
 
 
 
-- Looper可能存在的问题
+- 的问题
   - 为什么主线程是不能退出的？
   - Looper会一直循环吗？
   - 主线程Looper为什么会指向一个强引用
   - ThreadLocal是如何保证Looper的唯一性的
   - dispatchMessage(msg)事件分发内部是如何处理的
   - 重置IPC身份内部都做了什么事情
+  - 事件分发，这个Message是如何确定Handler的
+  - Message的Handler是否可以为null，什么情况下为null，为null是如何处理的
 
 
 
@@ -619,6 +621,18 @@ private void expungeStaleEntries() {
 
 
 
+- 问题
+  - ThreadLocalMap数据结构
+  - ThreadLocalMap为什么使用线性探测
+  - ThreadLocalMap set过程是什么样的
+  - ThreadLocalMap的扩容机制是什么样子
+  - ThreadLocalMap不会内存泄漏吗，什么时候进行清理
+  - ThreadLocalMap Entry为什么继承弱引用，可以解决什么样的问题
+  - ThreadLocalMap的hash值是如何计算的
+  - 线性探测原理
+
+
+
 
 ## 四、Handler
 
@@ -741,6 +755,15 @@ public void dispatchMessage(Message msg) {
         return queue.enqueueMessage(msg, uptimeMillis);
     }
 ```
+
+#### 总结
+
+- 问题
+  - Handler中的延迟时间是如何计算的
+  - Handler事件分发顺序是怎样的
+  - 设置异步setAsynchronous有什么意义
+  - 通过obtainMessage创建Message有什么好处
+
 
 
 ## 五、MessageQueue
@@ -1003,7 +1026,21 @@ public void removeSyncBarrier(int token) {
 }
 ```
 
-## Message
+
+
+#### 总结
+
+- 问题
+  - 插入消息的顺顺序是什么
+  - 消息机制Lopper中的循环会一直循环下去吗
+  - 什么情况会进行事件的唤醒
+  - nativePollOnce有什么功能
+  - isAsynchronous有什么左右
+  - IdleHandler做了什么事情，工作流程是怎样的
+
+
+
+## 六、Message
 
 在代码中，可能经常看到recycle()方法，咋一看，可能是在做虚拟机的gc()相关的工作，其实不然，这是用于把消息加入到消息池的作用。这样的好处是，当消息池不为空时，可以直接从消息池中获取Message对象，而不是直接创建，提高效率。
 
@@ -1071,6 +1108,15 @@ void recycleUnchecked() {
     }
 }
 ```
+
+#### 总结
+
+- 问题
+  - 对象池是用来做什么的
+  - 对象池的工作原理
+  - 
+
+
 
 #### 参考
 
