@@ -29,6 +29,8 @@
 
 #### Android
 
+- ThreadLocal、Handler、MessageQueue、Lopper源码解析
+
 #### Android JNI NDK
 
 #### 线程、线程池

@@ -911,6 +911,98 @@ Message next() {
 }
 ```
 
+##### 5.3 异步消息
+
+###### 5.3.1设置为异步消息
+
+```java
+public void setAsynchronous(boolean async) {
+    if (async) {
+        flags |= FLAG_ASYNCHRONOUS;
+    } else {
+        flags &= ~FLAG_ASYNCHRONOUS;
+    }
+}
+```
+
+###### 5.3.2 Sync Barrier
+
+SyncBarrier是通过MessageQueue中的postSyncBarrier(long when)、removeSyncBarrier(int token)调用来实现添加、删除的，用于控制异步消息的执行。
+
+```java
+// 将同步屏障发布到Looper的消息队列中。
+// 消息处理将照常进行，直到消息队列遇到
+// 已发布的同步屏障。遇到障碍时，
+// 稍后队列中的同步消息被暂停（防止被执行）
+// 直到通过调用{@link #removeSyncBarrier}并指定
+// 标识同步屏障的令牌
+public int postSyncBarrier() {
+    return postSyncBarrier(SystemClock.uptimeMillis());
+}
+
+private int postSyncBarrier(long when) {
+    // Enqueue a new sync barrier token.
+    // We don't need to wake the queue because the purpose of a barrier is to stall it.
+    synchronized (this) {
+        final int token = mNextBarrierToken++;
+        final Message msg = Message.obtain();
+        msg.markInUse();
+        msg.when = when;
+        msg.arg1 = token;
+
+        Message prev = null;
+        Message p = mMessages;
+        if (when != 0) {
+            while (p != null && p.when <= when) {
+                prev = p;
+                p = p.next;
+            }
+        }
+        if (prev != null) { // invariant: p == prev.next
+            msg.next = p;
+            prev.next = msg;
+        } else {
+            msg.next = p;
+            mMessages = msg;
+        }
+        return token;
+    }
+}
+
+//  消除同步障碍。
+public void removeSyncBarrier(int token) {
+    // Remove a sync barrier token from the queue.
+    // If the queue is no longer stalled by a barrier then wake it.
+    synchronized (this) {
+        Message prev = null;
+        Message p = mMessages;
+        while (p != null && (p.target != null || p.arg1 != token)) {
+            prev = p;
+            p = p.next;
+        }
+        if (p == null) {
+            throw new IllegalStateException("The specified message queue synchronization "
+                    + " barrier token has not been posted or has already been removed.");
+        }
+        final boolean needWake;
+        if (prev != null) {
+            prev.next = p.next;
+            needWake = false;
+        } else {
+            mMessages = p.next;
+            needWake = mMessages == null || mMessages.target != null;
+        }
+        p.recycleUnchecked();
+
+        // If the loop is quitting then it is already awake.
+        // We can assume mPtr != 0 when mQuitting is false.
+        if (needWake && !mQuitting) {
+            nativeWake(mPtr);
+        }
+    }
+}
+```
+
 ## Message
 
 在代码中，可能经常看到recycle()方法，咋一看，可能是在做虚拟机的gc()相关的工作，其实不然，这是用于把消息加入到消息池的作用。这样的好处是，当消息池不为空时，可以直接从消息池中获取Message对象，而不是直接创建，提高效率。
@@ -985,3 +1077,5 @@ void recycleUnchecked() {
 https://www.cnblogs.com/micrari/p/6790229.html
 
 http://gityuan.com/2015/12/26/handler-message-framework/
+
+https://blog.csdn.net/asdgbc/article/details/79148180
