@@ -23,6 +23,10 @@
 
 ### 分类
 
+#### 音视频
+
+
+
 #### java
 
 
@@ -40,7 +44,8 @@
 
 - ThreadLocal、Handler、MessageQueue、Lopper源码解析
 - Android事件分发源码解析(**看了一部分，需要重新再看，有些部分不是很理解**)
-- 
+
+#### C++基础
 
 #### Android JNI NDK
 
