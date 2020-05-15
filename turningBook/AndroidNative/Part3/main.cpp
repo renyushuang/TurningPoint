@@ -49,7 +49,10 @@ int main() {
     // 8进制 开头增加0
     int inseam = 042;
 
+    // 默认1492 是存储为int的，除非有特别的理由
+    std::cout<<"Year = "<< 1492<<std::endl;
 
+    
 
     return 0;
 }
