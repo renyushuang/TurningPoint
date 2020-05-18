@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/arith.cpp">
+			<Option target="Part3"/>
+		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/main.cpp">
 			<Option target="Part3"/>
 		</Unit>

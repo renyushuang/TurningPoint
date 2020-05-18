@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3
+CMAKE_SOURCE_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug/CMakeFiles /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug/CMakeFiles /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Part3
+# Target rules for targets named part4_1
 
 # Build rule for target.
-Part3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Part3
-.PHONY : Part3
+part4_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 part4_1
+.PHONY : part4_1
 
 # fast build rule for target.
-Part3/fast:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/build
-.PHONY : Part3/fast
-
-arith.o: arith.cpp.o
-
-.PHONY : arith.o
-
-# target to build an object file
-arith.cpp.o:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/arith.cpp.o
-.PHONY : arith.cpp.o
-
-arith.i: arith.cpp.i
-
-.PHONY : arith.i
-
-# target to preprocess a source file
-arith.cpp.i:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/arith.cpp.i
-.PHONY : arith.cpp.i
-
-arith.s: arith.cpp.s
-
-.PHONY : arith.s
-
-# target to generate assembly for a file
-arith.cpp.s:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/arith.cpp.s
-.PHONY : arith.cpp.s
+part4_1/fast:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/build
+.PHONY : part4_1/fast
 
 main.o: main.cpp.o
 
@@ -156,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -165,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +147,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -185,10 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Part3"
-	@echo "... arith.o"
-	@echo "... arith.i"
-	@echo "... arith.s"
+	@echo "... part4_1"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

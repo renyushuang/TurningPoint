@@ -44,16 +44,16 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3
+CMAKE_SOURCE_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Part3.dir/all
+all: CMakeFiles/part4_1.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Part3.dir/clean
+clean: CMakeFiles/part4_1.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Part3.dir
+# Target rules for target CMakeFiles/part4_1.dir
 
 # All Build rule for target.
-CMakeFiles/Part3.dir/all:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/depend
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Part3"
-.PHONY : CMakeFiles/Part3.dir/all
+CMakeFiles/part4_1.dir/all:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/depend
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target part4_1"
+.PHONY : CMakeFiles/part4_1.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Part3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Part3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/Part3/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Part3.dir/rule
+CMakeFiles/part4_1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/part4_1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/part4_1.dir/rule
 
 # Convenience name for target.
-Part3: CMakeFiles/Part3.dir/rule
+part4_1: CMakeFiles/part4_1.dir/rule
 
-.PHONY : Part3
+.PHONY : part4_1
 
 # clean rule for target.
-CMakeFiles/Part3.dir/clean:
-	$(MAKE) -f CMakeFiles/Part3.dir/build.make CMakeFiles/Part3.dir/clean
-.PHONY : CMakeFiles/Part3.dir/clean
+CMakeFiles/part4_1.dir/clean:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/clean
+.PHONY : CMakeFiles/part4_1.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

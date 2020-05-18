@@ -357,3 +357,328 @@ std::cout<<"Year = "<< 1492<<std::endl;
 #### 3.1.8 char 类型：字符和小整数
 
 为存储字符而设计的
+
+美国常用的符号集是ASCLL
+
+IBM使用EBCDIC
+
+c++支持宽字符类型可以支持存储更多的值，例如Unicode
+
+```c++
+// 声明字符变量
+char ch;
+cout << "输入字符" << endl;
+cin >> ch;
+cout << "输入字符是 = " << ch << endl;
+```
+
+结果：
+
+char只能存储一个字符，所以只存储了第一个字符
+
+```c++
+输入字符
+ss
+输入字符是 = s
+```
+
+换一种说法：
+
+```c++
+    // 声明字符变量
+    char ch = 77;
+    // 等价于 ch = 'M'
+    int chNumber = ch;
+    ch = chNumber + 1;
+//    cout << "输入字符" << endl;
+//    cin >> ch;
+    cout.put('c');
+    cout<<endl;
+    cout << "输入字符是 = " << ch << " --- " << chNumber << endl;
+```
+
+##### 2.cout.put是什么
+
+可以代替**<<** 但是只能输入单个字符
+
+为什么会有这个东西
+
+答案与历史有有关。c++Relase2.0之前，cout将字符串变量显示为字符，而将字符常量（如‘M’和‘N’）显示为数字。char占8位，二char的编码存储在16或32位的int中
+
+```c++
+// 这个打印的是c的字符
+cout.put('c');
+// 这个打印的是c的ASCLL码
+cout<<'c';
+```
+
+##### 4. 通用字符名
+
+\u后是8个16进制
+
+\u00F6rper 
+
+##### 5.signed char 和Unsigned char
+
+取值范围 -127—128    0—255
+
+##### 6.、wcha_t
+
+宽字符
+
+##### 7.c++新增的类型 char16_t和char_32_t
+
+- char16_t无符号长16位
+- char_32_t无符号长32位
+
+
+
+#### 3.1.9 bool类型
+
+```c++
+// bool 默认声明方式
+bool is_ready = true;
+// bool true 相当于 int ans = 1; 当然也是非0值
+int ans = true;
+// bool false 相当于 int ans = 0;
+int promise = false;
+
+bool start = -100;
+// 相当于 false
+bool end  = 0;
+```
+
+#### 3.2 const限定符号
+
+常量的符号名称。初始化后值就被固定，编译器不准许再修改这个值
+
+```c++
+const int Months = 10;
+```
+
+#### 3.3 浮点数
+
+#### 3.3.2 浮点类型
+
+float、double、long double
+
+float至少32位
+
+double至少48位而且不少于float
+
+long double至少和double一样多，通常为80、96或128位
+
+
+
+cfloat或float.h可以找到系统的限制
+
+
+
+#### 3.3.4 浮点数的优缺点
+
+优点：
+
+1.表示整数之间的值
+
+2.由于有缩放因子，可以表示的范围大得多
+
+缺点：
+
+1.运算的速度通常比整数运算慢
+
+2.精度低
+
+
+
+#### 3.4 c++算数运算符
+
+```c++
+int hats = 10, heads = 5;
+
+cout << "hats + heads = " << hats + heads << endl;
+cout << "hats - heads = " << hats - heads << endl;
+cout << "hats * heads = " << hats * heads << endl;
+cout << "hats / heads = " << hats / heads << endl;
+// 取余数
+cout << "hats % heads = " << hats % heads << endl;
+```
+
+##### 3.4.1 运算符优先级和结合性
+
+##### 3.4.2 除法分支
+
+```c++
+9/5; // int除法
+9L/5L; // Long除法
+9.0/5.0;//double除法
+9.0f/5.0f; // float除法
+```
+
+##### 3.4.3 求模运算
+
+```c++
+const int Lbs_per_stn = 14;
+int lbs = 34;
+
+int stone = lbs/Lbs_per_stn;
+int pounds = lbs%Lbs_per_stn;
+cout<<stone<<" stone "<<pounds<<" pounds"<<endl;
+```
+
+##### 3.4.4 类型转换
+
+c++自动执行很多类型转换：
+
+- 将一种蒜素类型的值赋给另一种算数类型的变量时，c++将对值进行转换
+
+- 表达式中包含不同的类型时，c++将对值进行转换
+- 将参数传递给函数时，C++将对值进行转换
+
+#### 3.4.5 C++中的auto声明
+
+```c++
+auto n = 100;// n为int
+auto x = 1.5;// x为double
+auto y = 1.3e12L;// y为long double
+```
+
+
+
+## 四、复合类型
+
+- 介绍复合类型
+- 介绍new 和 delete及如何使用他们来管理数据
+- 简要的介绍string类
+
+### 4.1 数组
+
+```c++
+// 数组声明应指出以下三点
+// 1.存储在每个元素中的值类型
+// 2.数组名
+// 3.数组中的元素数
+
+short months[12];
+
+// typeName arrayName[arraySize];
+// arraySize指定元素数量，必须是整型常数，arraySize不能是变量
+// 稍后会有new 运算符来避开这种显示
+```
+
+```c++
+// 存值
+months[0] = 1;
+months[1] = 2;
+months[2] = 3;
+// 取值
+cout << "months 0 = " << months[0] << endl;
+cout << "months 1 = " << months[1] << endl;
+cout << "months 2 = " << months[2] << endl;
+```
+
+上面的赋值桡了一大圈，使用捷径方式
+
+```c++
+int yamcosts[3] = {20, 30, 5};
+```
+
+##### 4.1.2 数组的初始化规则
+
+```c++
+    int yamcosts[3] = {20, 30, 5};
+    int hand[4];
+//    hand[4] = {1,2,3,4}; 这是错误的
+//    hand = yamcosts;这也是不行的
+```
+
+```c++
+// 只初始化了前两个元素
+    float hotelTips[5] = {5.0,2.5}; 
+```
+
+##### 4.1.4 C++11数组初始化方法
+
+```c++
+// c++11的数组初始化
+// 不需要增加 =
+double earnings[4]{1.2e4, 1.6e4, 1.1e4};
+// 将所有元素都设置为 0
+float balances[100]{};
+// 列表初始化禁止缩窄转换
+long plifs[] = {25, 92,3.0};// double转long是缩窄操作，不能编译通过
+char slofs[4]{'h', 'i',11211};//11211 超出了char的取值范围，所以编译不过 
+char tlifs[4]{'h', 'i',112};
+```
+
+C++标准模版库增加了一种数组替代品vector
+
+c++11增加了array
+
+这些会在16章进行看
+
+### 4.2 字符串
+
+c-风格字符串
+
+```c++
+// c-风格字符串
+// 非string
+char dog[8] = {'b', 'e', 'a', 'u', 'I', 'I'};
+// 以空字符结尾，空字符被写作\0
+char cat[8] = {'b', 'e', 'a', 'u', 'I', '\0'};
+```
+
+这种方式写起来太恶心了，换一种字符串常量或字符串字面值
+
+```c++
+char bird[11] = "Mr.Cheeps";
+char fish[] = "Bubbles";
+// 这种方式将会自动读到char数组中，并自动加上结尾的空字符
+```
+
+#### 4.2.1 拼接字符串常量
+
+```c++
+cout<<"11211 超出了char的"
+      "取值范围，所以编译不过"
+```
+
+#### 4.2.2 在数组中使用字符串
+
+两种方法：
+
+- 数组初始化为字符串常量
+- 将键盘或文件输入读入到数组中
+
+不懂如何把string放入数组中
+
+#### 4.2.3 字符串输入
+
+1.面向行的输入 getline()
+
+2.面向行的输入get
+
+3.空行和其他问题 cin.clear进行恢复
+
+
+
+### 4.3 string类简介
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
