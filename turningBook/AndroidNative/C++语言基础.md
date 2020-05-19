@@ -422,7 +422,7 @@ cout<<'c';
 
 取值范围 -127—128    0—255
 
-##### 6.、wcha_t
+##### 6.、wchar_t
 
 宽字符
 
@@ -664,21 +664,82 @@ cout<<"11211 超出了char的"
 
 ### 4.3 string类简介
 
+```c++
+string str2 = "panther";
+cout << "str2 = " << str2[2] << endl;
+```
+
+很多方面，使用string对象的方式与使用字符数组相同：
+
+- 可以使用C-风格字符串来初始化string对象
+- 可以使用cin来将键盘输入存储到string对象中
+- 可以使用cout来显示string对象
+- 可以使用数组表示法老访问存储在string对象中的字符
+
+#### 4.3.1 C++11字符串初始化
+
+```c++
+// c++11字符串初始化
+char first_data[] = {"aaaaa"};
+char secound_data[] {"aaaaa"};
+string secound_str[] {"aaaaa"};
+string first_srt[] {"aaaaa"};
+```
+
+#### 4.3.2 赋值、拼接和附加
+
+```c++
+// 赋值操作
+string str1;
+string str2 = "panther";
+str1 = str2;
+// 拼接
+string str3;
+str3 = str2 + str1;
+// 附加
+str1 += str2;
+```
+
+#### 4.3.3 string类的其他操作(这玩意看着只有char数组那么也就是C-风格字符串)
+
+```c++
+char charr1[] = {"bbb"};
+char charr2[] = {"aaaaa"};
+// 将字符串复制到字符串数组
+strcpy(charr1, charr2);
+cout << charr1 << " strcpy--- " << charr2 << endl;
+// 将字符串附加到数组中
+strcat(charr1, charr2);
+cout << charr1 << " strcat --- " << charr2 << endl;
+```
+
+结果：
+
+```c++
+aaaaa strcpy--- aaaaa
+aaaaaaaaaa strcat --- aaaaa
+```
+
+字符串长度：
+
+```c++
+// 确定字符串的长度
+str1.size();
+strlen(charr2); // 这个只能用 char[]
+```
+
+#### 4.3.4 string类的I/O
+
+```c++
+// 这种适用于char[] 输入
+cin.getline(charr1,20);
+// 这种是用于string的输入
+getline(cin,str2);
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+### 4.4 结构简介
 
 
 

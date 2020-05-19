@@ -47,13 +47,50 @@ int main() {
     char bird[11] = "Mr.Cheeps";
     char fish[] = "Bubbles";
     cout << "11211 超出了char的"
-            "取值范围，所以编译不过"<<endl;
+            "取值范围，所以编译不过" << endl;
     const int Size = 15;
     char name1[Size];
     char name2[Size] = "C++owboy";
     name2[3] = '\0';
     cout << name2 << endl;
 
- 
+
+
+
+    // c++11字符串初始化
+    char first_data[] = {"aaaaa"};
+    char secound_data[]{"aaaaa"};
+    string secound_str[]{"aaaaa"};
+    string first_srt[]{"aaaaa"};
+
+    // 赋值操作
+    string str1;
+    string str2 = "panther";
+    str1 = str2;
+    // 拼接
+    string str3;
+    str3 = str2 + str1;
+    // 附加
+    str1 += str2;
+
+
+    char charr1[] = {"bbb"};
+    char charr2[] = {"aaaaa"};
+    // 将字符串复制到字符串数组
+    strcpy(charr1, charr2);
+    cout << charr1 << " strcpy--- " << charr2 << endl;
+    // 将字符串附加到数组中
+    strcat(charr1, charr2);
+    cout << charr1 << " strcat --- " << charr2 << endl;
+
+    // 确定字符串的长度
+    str1.size();
+    strlen(charr2); // 这个只能用 char[]
+
+    // 这种适用于char[] 输入
+    cin.getline(charr1,20);
+    // 这种是用于string的输入
+    getline(cin,str2);
+
     return 0;
 }
