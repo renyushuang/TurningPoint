@@ -737,9 +737,209 @@ cin.getline(charr1,20);
 getline(cin,str2);
 ```
 
-
-
 ### 4.4 结构简介
+
+学习有关结构的知识将使我们离c++的核心OOP更近
+
+```c++
+struct inflatable{
+    char name[20];
+    float volume;
+    double trice;
+};
+```
+
+定义好了结构就可以定义变量了：
+
+```c++
+inflatable inflatable_a;
+inflatable inflatable_b[12];
+```
+
+#### 4.4.1 在程序中使用结构
+
+```c++
+#include <iostream>
+
+struct inflatable {
+    char name[20];
+    float volume;
+    double trice;
+};
+
+using namespace std;
+
+int main() {
+		// 初始化方式
+    inflatable guest = {
+            "renyushuang",
+            1.88,
+            29.99,
+    };
+    cout << "guest.name = " << guest.name << endl;
+    cout << "guest.volume = " << guest.volume << endl;
+    cout << "guest.trice = " << guest.trice << endl;
+
+
+    return 0;
+}
+```
+
+- 上面这种属于外部身影，外部声明可以被后面的任何函数使用
+- 内部声明只能被该声明所属的函数所用
+
+#### 4.4.2 c++结构初始化
+
+```c++
+inflatable mayor = {
+};
+cout << "mayor.name = " << mayor.name << endl;
+cout << "mayor.volume = " << mayor.volume << endl;
+cout << "mayor.trice = " << mayor.trice << endl;
+
+// 结果
+// mayor.name = 
+// mayor.volume = 0
+// mayor.trice = 0
+
+```
+
+```c++
+inflatable duck{
+        "renyushuang",
+        1.88,
+        29.99,
+};
+```
+
+#### 4.4.3 结构可以将string类作为成员变量吗？
+
+```c++
+using namespace std;
+
+struct inflatable {
+    string name;
+    float volume;
+    double trice;
+};
+// 看样子没啥问题
+```
+
+#### 4.4.4 其他结构属性
+
+```c++
+inflatable duck{
+        "renyushuang",
+        1.88,
+        29.99,
+};
+
+inflatable choice;
+choice = duck;
+```
+
+```c++
+// 这样的方式也是可以的， 创建两个结构变量
+struct inflatable {
+    string name;
+    float volume;
+    double trice;
+}mr_smith, ms_ones;
+```
+
+```c++
+// 声明的同时进行直接赋值
+struct inflatable {
+    string name;
+    float volume;
+    double trice;
+} mr_smith{
+        "name",
+        1.1,
+        2.2
+}, ms_ones;
+```
+
+```c++
+// 甚至声明的时候可以隐藏名称 no tag
+// 这种方式 没有办法创建这种类型的变量，所以分情况使用
+struct {
+    int x;
+    int y;
+} position;
+```
+
+#### 4.4.5 结构数组
+
+```c++
+inflatable gifts[100];
+```
+
+数组的初始化：
+
+```c++
+struct position {
+    int x;
+    int y;
+};
+
+position gifts[2] = {
+        {1, 2},
+        {3, 4}
+};
+// 访问就和正常的数组相同
+gifts[0].x
+```
+
+#### 4.4.6 结构中的位字段
+
+```c++
+// 1.字段的类型应为整型或枚举类型
+// 2.冒号后面指定了位数
+// 3.每个成员都被称为 字段
+struct torgle_register {
+    unsigned int SN: 4;
+    unsigned int : 4; // 这种没有名称的 提供间距
+    bool goodIn: 1;
+    bool goodleTorgle: 1;
+};
+torgle_register x = {4, true, false};
+```
+
+### 4.5 共同体
+
+```c++
+// 共同体能存储不同的类型，但是只能同时存储一种类型
+union une4all {
+    int int_val;
+    long long_val;
+    double double_val;
+};
+```
+
+它的优势是 使用两种或更多格式时可以节省空间
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

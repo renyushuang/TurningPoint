@@ -83,6 +83,9 @@
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/main.cpp">
 			<Option target="part4_1"/>
 		</Unit>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/structur.cpp">
+			<Option target="part4_1"/>
+		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

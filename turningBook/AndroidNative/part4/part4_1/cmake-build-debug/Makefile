@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+structur.o: structur.cpp.o
+
+.PHONY : structur.o
+
+# target to build an object file
+structur.cpp.o:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/structur.cpp.o
+.PHONY : structur.cpp.o
+
+structur.i: structur.cpp.i
+
+.PHONY : structur.i
+
+# target to preprocess a source file
+structur.cpp.i:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/structur.cpp.i
+.PHONY : structur.cpp.i
+
+structur.s: structur.cpp.s
+
+.PHONY : structur.s
+
+# target to generate assembly for a file
+structur.cpp.s:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/structur.cpp.s
+.PHONY : structur.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... structur.o"
+	@echo "... structur.i"
+	@echo "... structur.s"
 .PHONY : help
 
 

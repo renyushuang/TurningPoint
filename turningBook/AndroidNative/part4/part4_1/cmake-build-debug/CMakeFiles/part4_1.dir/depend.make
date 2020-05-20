@@ -3,3 +3,5 @@
 
 CMakeFiles/part4_1.dir/main.cpp.o: ../main.cpp
 
+CMakeFiles/part4_1.dir/structur.cpp.o: ../structur.cpp
+
