@@ -906,7 +906,7 @@ struct torgle_register {
 torgle_register x = {4, true, false};
 ```
 
-### 4.5 共同体
+### 4.5 共同体（这块不理解，之后用到具体场景再看）
 
 ```c++
 // 共同体能存储不同的类型，但是只能同时存储一种类型
@@ -919,21 +919,88 @@ union une4all {
 
 它的优势是 使用两种或更多格式时可以节省空间
 
+### 4.6 枚举
 
+可以替代const。实例
 
+```c++
+// spectrum 定义枚举名称
+enum spectrum {
+    red, blue, green, orange//这些是符号常量，对应着整数值0～N，叫做枚举量
+};
+// 用枚举名称声明这种变量
+spectrum band;
 
+// 枚举变量的赋值
+band = blue;
+//    band = 2000; // 枚举变量只能使用自己定义的值
 
+//    band = 1;// 枚举变量不能自动转为整型
+int color = 1 + band; // 但是可以当成整型进行运算
 
+// 可以进行强制类型转换赋值给band类型
+band = spectrum(3);
+```
 
+#### 4.6.1 设置枚举的值
 
+```c++
+enum bits {
+    one = 1,
+    two = 2,
+    four = 4
+};
+```
 
+```c++
+// 也可以只对部分赋值
+enum bits {
+    one = 1,
+    two = 2,
+    four
+};
+```
 
+**难道只能赋值成int**
 
+#### 4.6.2 枚举的取之范围
 
+```c++
+enum bits {
+    one = 1,
+    two = 2,
+    four = 10
+};
+bits my_flag;
+// 这个虽然没有具体定义，bits中最小值是1，最大值是10，6是在其中的所以合理
+// 试了一下bits(111111112);所以实际长度是由编译器决定的可能是int的最大最小
+my_flag = bits(6);
+cout << "my_flag = " << my_flag << endl;
+```
 
+### 4.7 指针和自由存储空间
 
+计算机程序在存储数据时必须跟踪的3种基本属性：
 
+- 信息存储在何处
+- 存储的值为多少
+- 存储的信息时什么类型
 
+指针：
+
+- 存储的是值的地址，而不是值本身
+- 常规变量的地址 & 例如 &home
+
+```c++
+int dounts = 6;
+cout << "&dounts = " << &dounts << endl;
+```
+
+结果：
+
+```c++
+&dounts = 0x7ffee52965fc
+```
 
 
 

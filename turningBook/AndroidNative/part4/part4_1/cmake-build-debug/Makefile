@@ -123,6 +123,33 @@ part4_1/fast:
 	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/build
 .PHONY : part4_1/fast
 
+address.o: address.cpp.o
+
+.PHONY : address.o
+
+# target to build an object file
+address.cpp.o:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/address.cpp.o
+.PHONY : address.cpp.o
+
+address.i: address.cpp.i
+
+.PHONY : address.i
+
+# target to preprocess a source file
+address.cpp.i:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/address.cpp.i
+.PHONY : address.cpp.i
+
+address.s: address.cpp.s
+
+.PHONY : address.s
+
+# target to generate assembly for a file
+address.cpp.s:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/address.cpp.s
+.PHONY : address.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... part4_1"
+	@echo "... address.o"
+	@echo "... address.i"
+	@echo "... address.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

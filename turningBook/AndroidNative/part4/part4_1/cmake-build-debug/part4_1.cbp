@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/address.cpp">
+			<Option target="part4_1"/>
+		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part4/part4_1/main.cpp">
 			<Option target="part4_1"/>
 		</Unit>
