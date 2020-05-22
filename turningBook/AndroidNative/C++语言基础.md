@@ -1004,9 +1004,151 @@ cout << "&dounts = " << &dounts << endl;
 
 
 
+指针与c++基本原理
+
+- 运行阶段进行决策
+- 编译阶段是指编译器将程序组合起来
 
 
 
+举一个例子：
+
+1. manly是一个指针
+2. 则manly表示的是一个地址
+3. *manly表示存储在该地址处的值
+4. *manly与常规的int变量等效
+
+
+
+```c++
+int updates = 10;
+
+int *p_update;
+p_update = &updates;
+cout << "这输出的是一个地址 p_update = " << p_update << endl;
+cout << "这输出的是地址指向的值 *p_update = " << *p_update << endl;
+```
+结果：
+```c++
+这输出的是一个地址 p_update = 0x7ffee6f725fc
+这输出的是地址指向的值 *p_update = 10
+```
+
+
+
+#### 4.7.1 声明和初始化指针
+
+```c++
+// 这些都是可以的
+int *ptr;
+int* ptr1;
+int*ptr2;
+    
+// 这个声明了一个指针，一个普通变量
+int *ptr3,ptr4;
+```
+
+#### 2.7.2 指针的危险
+
+在c++中创建指针时，
+
+1. 计算机将分配用来存储地址的内存，
+
+2. 但不会分配用来存储指针指向的数据内存
+
+#### 4.7.4 使用new来分配内存
+
+看看指针是如何实现程序运行时分配内存的。
+
+指针的用武之地在于，在运行阶段分配未命名的内存以存储
+
+c语言是使用malloc()分配内存
+
+c++
+
+```c++
+// new 关键字 找到一个长度正确的内存块
+int *pn = new int;
+// 这句话做了一个什么样的事情
+// new int 创建了一个内存地址空间，并将地址返回
+```
+
+作为一个数据对象（可以是结果，也可以是一个基本类型），获得并指定分配内存的通用格式如下：
+
+typeName *Pointer_name = new tyoeName;
+
+```c++
+double *pDouble = new double;
+*pDouble = 1111;
+```
+
+#### 4.7.5 使用delete释放内存
+
+```c++
+double *pDouble = new double;
+*pDouble = 1111;
+
+// 释放pDouble指向的内存，但不会删除指针pDouble补充
+// 一定要记得删除，不然不然会发生内存泄漏
+delete pDouble;
+```
+
+不要尝试释放已释放的内存
+
+#### 4.7.6 使用new 来创建动态数组
+
+```c++
+// 创建数组
+int *psome = new int[10];
+delete[] psome;
+```
+
+使用new和delete时，应遵守以下规则：
+
+- 不要使用delete来释放不是new分配的内存
+- 不要使用delete释放同一个内存块两次
+- 如果使用new[]为数组分配内存，则应使用delete[]释放内存
+- 如果使用new[]为一个实体分配内存则应使用delete来释放
+- 对空指针应用delete是安全的
+
+###### 2.使用动态数组
+
+```c++
+cout << "psome[0] = " << psome[0] << endl;
+// 相当于psome地址向前移动了，相当于psome[0]指向了第二个值
+psome += 1;
+cout << "+1 psome[0] = " << psome[0] << endl;
+psome -= 1;
+cout << "-1 psome[0] = " << psome[0] << endl;
+delete[] psome;
+```
+
+结果：
+
+```c++
+psome[0] = 1
++1 psome[0] = 2
+-1 psome[0] = 1
+```
+
+### 4.8指针、数组和指针算数
+
+指针和数组基本等价的原因在于指针算数和c++内部处理数组的方式。
+
+```c++
+double wages[3] = {10000.0, 20000.0, 30000.0};
+short tacks[3] = {1, 2, 3};
+
+double *pWages = wages;// 看来数组本身就是一个地址
+short *pTacks = &tacks[0];// 如果是地址指向的话，那么应该指向第一个
+cout << "sizeof(pWages) = " << sizeof(pWages) << endl;
+cout << "sizeof(tacks[0]) = " << sizeof(tacks[1]) << endl;
+
+delete []pWages;
+delete []pTacks;
+```
+
+### 4.8.3 指针和字符串
 
 
 
