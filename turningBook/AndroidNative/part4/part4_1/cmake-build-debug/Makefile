@@ -150,6 +150,33 @@ address.cpp.s:
 	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/address.cpp.s
 .PHONY : address.cpp.s
 
+array_replace.o: array_replace.cpp.o
+
+.PHONY : array_replace.o
+
+# target to build an object file
+array_replace.cpp.o:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/array_replace.cpp.o
+.PHONY : array_replace.cpp.o
+
+array_replace.i: array_replace.cpp.i
+
+.PHONY : array_replace.i
+
+# target to preprocess a source file
+array_replace.cpp.i:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/array_replace.cpp.i
+.PHONY : array_replace.cpp.i
+
+array_replace.s: array_replace.cpp.s
+
+.PHONY : array_replace.s
+
+# target to generate assembly for a file
+array_replace.cpp.s:
+	$(MAKE) -f CMakeFiles/part4_1.dir/build.make CMakeFiles/part4_1.dir/array_replace.cpp.s
+.PHONY : array_replace.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -216,6 +243,9 @@ help:
 	@echo "... address.o"
 	@echo "... address.i"
 	@echo "... address.s"
+	@echo "... array_replace.o"
+	@echo "... array_replace.i"
+	@echo "... array_replace.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

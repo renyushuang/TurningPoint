@@ -1150,5 +1150,114 @@ delete []pTacks;
 
 ### 4.8.3 指针和字符串
 
+#### 4.8.4 使用new创建动态结构
+
+```c++
+things *pThings = new things;
+*pThings = {
+        1, 2
+};
+// 这两种访问方式是等价的
+(*pThings).good;
+pThings->good;
+
+delete pThings;
+```
+
+#### 4.8.5 自动存储、静态存储和动态存储
+
+c++有3种管理数据内存的方式：
+
+- 自动存储
+- 静态存储
+- 动态存储
+
+#### 1.自动存储（局部变量）
+
+在函数内定义的常规变量属于自动存储空间
+
+- 调用时自动产生
+- 函数结束时消亡
+
+局部变量存储在栈中，执行过程中将依次加入到栈中，而离开时将按相反的顺数释放
+
+#### 2.静态存储
+
+整个程序执行过程中都存在的存储方式
+
+- 在函数外面定义它
+- 在声明变量时使用关键字static
+
+```c++
+static double fee = 56.5;
+```
+
+#### 3.动态存储
+
+new和delete运算符提供一种比自动变量和静态变量更灵活的方法。
+
+管理了一个内存池。c++被称为自由存储空间或者堆
+
+### 4.10 数组的替代品
+
+#### 4.10.1 模版类vector
+
+```c++
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+		// 不会用
+    vector<double> *vDouble = new vector<double>;
+    vector<double> vDouble = {1,2,3,4,5};
+  	// 这么一看和数组一样
+    vDouble[2]= 1;
+
+}
+```
+
+#### 4.10.2 模版类array
+
+```c++
+#include <array>
+
+using namespace std;
+
+int main() {
+    array<double,4> ad= {1,2,3,4};
+		ad[3] = 1;
+}
+```
+
+#### 4.10.3比较数组、vector对象和array对象
+
+使用begin和end避免数组越界
+
+
+
+## 五、循环和关系表达式
+
+
+
+### 5.1 for循环
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
