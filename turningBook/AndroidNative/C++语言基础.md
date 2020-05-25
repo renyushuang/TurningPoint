@@ -1247,15 +1247,369 @@ int main() {
 
 ### 7.1 复习函数的基本知识
 
+创建自己的函数
+
+- 定义
+- 提供原型
+- 调用
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+void simple();
+
+int main() {
+
+    simple();
+    return 0;
+}
+
+void simple() {
+    cout << "I'm but a simple function. \n";
+
+}
+```
+
+#### 7.1.1 定义函数
+
+```c++
+void functionName(parameterList){
+	statement(s);
+	return;
+}
+
+
+typName functionName(parameterList){
+	statement(s);
+	return value;
+}
+```
+
+#### 7.1.2 函数原型和函数调用
+
+##### 1.为什么需要原型
+
+是什么：原型描述了函数到编译器的接口
+
+什么用：
+
+```c++
+double volume = cube(1);
+```
+
+- 告诉编译器这cube()有一个参数，如果没有参数，原型将让编译器能够捕获这种错误
+- 其次cube()函数计算完成，将把返回值放置到指定位置-可能是CPU的寄存器，也可能是内存中
+- 如果没有这些信息编译器只能进行猜测，而编译器是不会这样做的
+
+##### 2.原型语法
+
+```c++
+double cube(double);
+```
+
+##### 3.原型功能
+
+- 编译器正常处理函数返回值
+- 编译器检查使用的参数数目是否正确
+- 编译器检查使用的参数类型是否正确。如果不正确，则转换为正确的类型
+
+### 7.2函数参数和按值传递
+
+c++是 值传递的不是引用传递
+
+```c++
+double cube(double);
+
+int main() {
+
+    double side = 10;
+    cube(side);
+    cout << "resut side = " << side << endl;
+
+    return 0;
+}
+
+
+double cube(double side) {
+    side = side + 1;
+    cout << "cube side = " << side << endl;
+}
+```
+
+结果：
+
+```c++
+cube side = 11
+resut side = 10
+```
+
+#### 7.2.1 多个参数
+
+```c++
+double cube(double,float);
+```
+
+#### 7.2.2 另外一个接受两个参数的函数
+
+
+
+### 7.3 函数和数组
+
+```c++
+int sum_arr(int arr[], int n) {
+    int totle = 0;
+    for (int i = 0; i < n; i++) {
+        totle = totle + arr[i];
+    }
+
+    return totle;
+}
+```
+
+#### 7.3.1 函数如何使用指针来处理数组
+
+```c++
+int sum_arr(int *arr[], int n) {
+    int totle = 0;
+    for (int i = 0; i < n; i++) {
+        totle = totle + (*arr)[i];
+    }
+
+    return totle;
+}
+```
+
+#### 7.3.2 将数组作为参数意味着什么
+
+
+
+### 7.10 函数指针
+
+前面越看越迷糊
+
+#### 7.10.1 函数指针的基础知识
+
+- 获取函数的地址
+- 声明一个函数指针
+- 使用指针来调用函数
+
+##### 1.获取函数的地址
+
+如果think()是一个函数，那么think就是函数的地址
+
+##### 2.声明函数指针
+
+```c++
+double cube(double);
+
+int main() {
+		// 声明函数指针的方式 pf()是一个返回指针的函数
+    // double *pf(int);
+		// 正确的声明并可以赋值给它 (*pf)(double)意味着pf是一个指向函数的指针
+   	double (*pf)(double);
+    pf = cube;
+    return 0;
+}
+```
+
+理解了函数指针，那么下面这个：
+
+```c++
+void estimate(int lines, double (*pt)(double));
+
+int main() {
+
+    double (*pf)(double);
+    pf = cube;
+
+    estimate(1,pf);
+
+    return 0;
+}
+```
+
+#### 3.使用指针来调用函数
+
+```c++
+double cube(double);
+
+void estimate(int lines, double (*pt)(double));
+
+int main() {
+
+    double (*pf)(double);
+    pf = cube;
+
+    // 指针调用
+    double x = pf(1);
+    cout << "x = " << x << endl;
+  	// 这样也是可以的
+    // double x = (*pf)(1);
+    // cout << "x = " << x << endl;
+    return 0;
+}
+
+double cube(double side) {
+    side = side + 1;
+    cout << "cube side = " << side << endl;
+    return side;
+}
+```
+
+
+
+#### 7.10.3 深入探讨函数指针
+
+
+
+#### 7.10.4 使用typedef进行简化
+
+```c++
+typedef double real;
+```
+
+
+
+## 八、 函数探幽
+
+
+
+### 8.1C++内联函数
+
+内联函数是c++为了提高程序运行速度所作出的一项改进
+
+
+
+```c++
+“编译过程的最终产品是可执行程序——由一组机器语言指令组成。运行程序时，操作系统将这些指令载入到计算机内存中，因此每条指令都有特定的内存地址。计算机随后将逐步执行这些指令。有时（如有循环或分支语句时），将跳过一些指令，向前或向后跳到特定地址。常规函数调用也使程序跳到另一个地址（函数的地址），并在函数结束时返回。下面更详细地介绍这一过程的典型实现。执行到函数调用指令时，程序将在函数调用后立即存储该指令的内存地址，并将函数参数复制到堆栈（为此保留的内存块），跳到标记函数起点的内存单元，执行函数代码（也许还需将返回值放入到寄存器中），然后跳回到地址被保存的指令处（这与阅读文章时停下来看脚注，并在阅读完脚注后返回到以前阅读的地方类似）。来回跳跃并记录跳跃位置意味着以前使用函数时，需要一定的开销”
+
+摘录来自: [美] Stephen Prata. “C++ Primer Plus（第6版）中文版。” Apple Books. 
+```
+
+
+
+内联函数：c++编译器将使用相应的函数代码替换函数调用。
+
+- 在函数声明前加上关键字inline
+- 在函数定义前加上关键字inline
+
+### 8.2 引用变量
+
+#### 8.2.1 创建引用变量
+
+```c++
+int rates;
+// &不是地址符号，而是类型标识符的一部分
+// rodents和rates指向相同的值和内存单元
+int &rodents = rates;
+```
+
+#### 8.2.2 将引用用作函数参数
+
+```c++
+#include <iostream>
+
+void swapr(int &a, int &b);
+
+void swapp(int *p, int *q);
+
+void stapv(int a, int b);
+
+int main() {
+
+    int wallet1 = 300;
+    int wallet2 = 350;
+
+    // 这个标识符相当于直接是引用传递
+    swapr(wallet1, wallet2);
+    swapp(&wallet1, &wallet2);
+    stapv(wallet1, wallet2);
+
+
+    return 0;
+}
+void swapr(int &a, int &b){
+
+
+
+}
+```
+
+#### 8.2.3引用的属性和特别指出
+
+#### 8.2.4 将引用用于结构
+
+#### 8.2.5 将引用用于类对象
+
+#### 8.2.6 对象、继承和引用
 
 
 
 
 
+## 十、对象和类
+
+### 10.1 过程性编程和面向对象编程
+
+#### 10.2.2 C++中的类
+
+```c++
+class Stock {
+// 这个是默认的
+private:
+    long shares;
+
+
+public:
+    void show();
+
+protected:
+    void getName();
+
+};
+
+void Stock::show() {
+
+
+}
+
+void Stock::getName() {
+
+}
+```
+
+##### 1.访问控制
+
+##### 2.控制对象成员的访问：共有还是私有
 
 
 
+#### 10.2.3 实现类成员函数
+
+```c++
+void Stock::show() {
 
 
+}
 
+void Stock::getName() {
+
+}
+```
+
+##### 1.成员函数说明
+
+##### 2.内联方法
+
+```c++
+inline void Stock::getName() {
+
+}
+```
+
+##### 3.方法使用哪个对象
+
+#### 10.2.4 使用类
 
