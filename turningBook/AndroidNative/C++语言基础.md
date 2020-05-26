@@ -1613,3 +1613,117 @@ inline void Stock::getName() {
 
 #### 10.2.4 使用类
 
+### 10.3 类的构造函数和析构函数
+
+#### 10.3.1 声明和定义构造函数
+
+.h
+
+```c++
+#ifndef PART_10_STOCK_H
+#define PART_10_STOCK_H
+
+
+#include <string>
+
+class Stock {
+private:
+    std::string company;
+public:
+    Stock(std::string &co);
+};
+
+
+#endif //PART_10_STOCK_H
+```
+
+实现：
+
+```c++
+
+#include "stock.h"
+
+
+Stock::Stock(std::string &co) {
+    company = co;
+};
+```
+
+#### 10.3.2 使用构造函数
+
+```c++
+std::string str = "aaaa";
+Stock *stock = new Stock(str);
+// 下面两种方式是对等的
+Stock stock1 = Stock(str);
+Stock stock2(str);
+```
+
+#### 10.3.3 默认构造函数
+
+没有提供构造函数，默认构造函数如下：
+
+```c++
+Stock();
+```
+
+```c++
+Stock::Stock() {
+
+};
+```
+
+#### 10.3.4 析构函数
+
+用构造函数创建对象后，程序负责跟踪该对象，直到其过期为止。对象过期时，程序将自动调用一个特殊的成员函数，该函数的名称令人生畏—析构函数
+
+- 析构函数的名字很特殊
+- 另外和构造函数一样没有返回值没有生命类型
+- 析构函数没有参数
+
+```c++
+Stock::~Stock() {
+
+};
+```
+
+调用时机：
+
+- 静态存储，则析构函数将在程序结束时自动被调用
+- 自动存储类对象，则构造函数将在程序执行完代码时自动被调用
+- 如果是new创建的则会在delete时进行调用
+
+### 10.4 this指针
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

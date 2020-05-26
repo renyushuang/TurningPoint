@@ -3,4 +3,4 @@ project(part_8)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(part_8 main.cpp stock00.cpp)
+add_executable(part_8 main.cpp stock00.cpp stock00.h)

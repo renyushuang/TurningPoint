@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/Stock.cpp" "/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug/CMakeFiles/part_8.dir/Stock.cpp.o"
   "/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/main.cpp" "/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug/CMakeFiles/part_8.dir/main.cpp.o"
   "/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/stock00.cpp" "/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug/CMakeFiles/part_8.dir/stock00.cpp.o"
   )

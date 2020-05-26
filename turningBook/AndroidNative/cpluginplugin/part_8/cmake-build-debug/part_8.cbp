@@ -80,10 +80,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/Stock.cpp">
+			<Option target="part_8"/>
+		</Unit>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/Stock.h">
+			<Option target="part_8"/>
+		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/main.cpp">
 			<Option target="part_8"/>
 		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/stock00.cpp">
+			<Option target="part_8"/>
+		</Unit>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/stock00.h">
 			<Option target="part_8"/>
 		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/CMakeLists.txt">

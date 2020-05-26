@@ -1,4 +1,5 @@
 #include <iostream>
+#include "stock00.h"
 
 void swapr(int &a, int &b);
 
@@ -15,7 +16,8 @@ int main() {
     swapr(wallet1, wallet2);
     swapp(&wallet1, &wallet2);
     stapv(wallet1, wallet2);
-    Stock str;
+    Stock *str = new Stock;
+    str->show();
     return 0;
 }
 

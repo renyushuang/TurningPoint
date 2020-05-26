@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/part_8.dir/Stock.cpp.o"
   "CMakeFiles/part_8.dir/main.cpp.o"
   "CMakeFiles/part_8.dir/stock00.cpp.o"
   "part_8"

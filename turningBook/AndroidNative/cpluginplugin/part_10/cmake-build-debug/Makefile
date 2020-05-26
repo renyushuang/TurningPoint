@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8
+CMAKE_SOURCE_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_10
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_10/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug/CMakeFiles /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_10/cmake-build-debug/CMakeFiles /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_10/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_8/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_10/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named part_8
+# Target rules for targets named part_10
 
 # Build rule for target.
-part_8: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 part_8
-.PHONY : part_8
+part_10: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 part_10
+.PHONY : part_10
 
 # fast build rule for target.
-part_8/fast:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/build
-.PHONY : part_8/fast
-
-Stock.o: Stock.cpp.o
-
-.PHONY : Stock.o
-
-# target to build an object file
-Stock.cpp.o:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/Stock.cpp.o
-.PHONY : Stock.cpp.o
-
-Stock.i: Stock.cpp.i
-
-.PHONY : Stock.i
-
-# target to preprocess a source file
-Stock.cpp.i:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/Stock.cpp.i
-.PHONY : Stock.cpp.i
-
-Stock.s: Stock.cpp.s
-
-.PHONY : Stock.s
-
-# target to generate assembly for a file
-Stock.cpp.s:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/Stock.cpp.s
-.PHONY : Stock.cpp.s
+part_10/fast:
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/build
+.PHONY : part_10/fast
 
 main.o: main.cpp.o
 
@@ -156,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -165,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,35 +147,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-stock00.o: stock00.cpp.o
+stock.o: stock.cpp.o
 
-.PHONY : stock00.o
+.PHONY : stock.o
 
 # target to build an object file
-stock00.cpp.o:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/stock00.cpp.o
-.PHONY : stock00.cpp.o
+stock.cpp.o:
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/stock.cpp.o
+.PHONY : stock.cpp.o
 
-stock00.i: stock00.cpp.i
+stock.i: stock.cpp.i
 
-.PHONY : stock00.i
+.PHONY : stock.i
 
 # target to preprocess a source file
-stock00.cpp.i:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/stock00.cpp.i
-.PHONY : stock00.cpp.i
+stock.cpp.i:
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/stock.cpp.i
+.PHONY : stock.cpp.i
 
-stock00.s: stock00.cpp.s
+stock.s: stock.cpp.s
 
-.PHONY : stock00.s
+.PHONY : stock.s
 
 # target to generate assembly for a file
-stock00.cpp.s:
-	$(MAKE) -f CMakeFiles/part_8.dir/build.make CMakeFiles/part_8.dir/stock00.cpp.s
-.PHONY : stock00.cpp.s
+stock.cpp.s:
+	$(MAKE) -f CMakeFiles/part_10.dir/build.make CMakeFiles/part_10.dir/stock.cpp.s
+.PHONY : stock.cpp.s
 
 # Help Target
 help:
@@ -212,16 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... part_8"
-	@echo "... Stock.o"
-	@echo "... Stock.i"
-	@echo "... Stock.s"
+	@echo "... part_10"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... stock00.o"
-	@echo "... stock00.i"
-	@echo "... stock00.s"
+	@echo "... stock.o"
+	@echo "... stock.i"
+	@echo "... stock.s"
 .PHONY : help
 
 
