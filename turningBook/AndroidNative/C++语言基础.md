@@ -1695,17 +1695,161 @@ Stock::~Stock() {
 
 ### 10.4 this指针
 
+## 十一、使用类
+
+### 11.1 运算符重载
+
+运算符重载是一种形式的C++多态
 
 
 
+运算符重载，例如：
+
+- *运算符用于地址
+- c++允许将运算符重载扩展到用户定义的类型（例如+将两对象相加）
+
+将两个数组相加是一种常见的运算，通常使用for循环来实现：
+
+```c++
+for(int i =0;i<20;i++){
+		evening[i] = sam[i] + janet[i];
+}
+```
+
+可以定义一个表示数组的类，并重载+运算符，于是可以有这样的语句：
+
+```c++
+evening = sam + janet;
+// 隐藏了内部机理，强掉了实质，这是OOP的另一个目标
+```
+
+
+### 11.2 计算时间：一个运算符重载示例
+
+```c++
+//
+// Created by 任玉双 on 2020/5/26.
+//
+
+#ifndef PART_11_TIME_H
+#define PART_11_TIME_H
+
+
+class Time {
+private:
+    int hours;
+    int minutes;
+
+public:
+    Time();
+
+    Time(int h, int m = 0);
+
+    Time Sum(const Time &time);
+};
+
+
+#endif //PART_11_TIME_H
+```
+
+#### 10.2.1 添加加法运算符
+
+```c++
+class Time {
+private:
+    int hours;
+    int minutes;
+
+public:
+    Time();
+
+    Time(int h, int m = 0);
+
+    Time Sum(const Time &time);
+
+    Time operator+(const Time &time);
+};
+```
+
+看我增加了个啥
+
+```c++
+Time Time::operator+(const Time &time) {
+    Time sum;
+    sum.minutes = this->minutes + time.minutes;
+    sum.hours = this->hours + time.hours + sum.minutes / 60;
+    sum.minutes % 60;
+    return sum;
+}
+```
+
+#### 11.2.2 重载限制
+
+- 重载后至少有一个操作数是用户定义的类型
+- 使用运算符时不能违反运算符原来的句法规则
+- 不能创建新的运算符
+- 不能重载下面的运算符（sizeof、.:、.*、？::）
+- 
+
+### 11.3 友元
+
+c++控制对类对象的私有部分的访问。通常公有类方法提佛那个唯一的访问途径，这种限制太严格以至于不适合特定的编程问题。在这种情况下，c++提供另外一种形式的访问权限：友元
+
+- 友元函数
+- 友元类
+- 友元成员函数
+
+之前的创建
+
+A=B*2.75这个时可以的
 
 
 
+A= 2.75*B这个时不行的，原因在于重载的函数时B的
 
 
 
+可以定义一下非成员函数
+
+Time operator*(double m,const time &t)
+
+非成员函数不能访问类的私有数据，有一类特殊的非成员函数可以访问类的私有成员，他们称为友元函数
 
 
+
+#### 11.3.1 创建友元
+
+```c++
+//“虽然operator *( )函数是在类声明中声明的，但它不是成员函数，因此不能使用成员运算符来调用；
+//虽然operator *( )函数不是成员函数，但它与成员函数的访问权限相同。”
+friend Time operator*(double m, const Time &time);
+```
+
+友元函数是非成员函数，访问权限和成员函数相同
+
+
+
+```c++
+// 从这来看成员函数还是非成员
+Time operator*(double m, const Time &time) {
+    return Time();
+}
+// 成员函数要有所属的类名 Time::
+Time::Time() {
+
+}
+// 具体试一下就知道 上面说的问题了
+Time Time::operator+(const Time &time) {
+    Time sum;
+    sum.minutes = this->minutes + time.minutes;
+    sum.hours = this->hours + time.hours + sum.minutes / 60;
+    sum.minutes % 60;
+    return sum;
+}
+```
+
+
+#### 11.3.2 常用的友元：重载<<运算符
 
 
 
