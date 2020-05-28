@@ -9,8 +9,12 @@
 /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_11/Time.cpp
 Time.h
 /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_11/Time.h
+ostream
+/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_11/ostream
 
 /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_11/Time.h
+iosfwd
+-
 
 /Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/cpluginplugin/part_11/main.cpp
 iostream

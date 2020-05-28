@@ -3,6 +3,7 @@
 //
 
 #include "Time.h"
+#include "ostream"
 
 Time Time::operator+(const Time &time) {
     Time sum;
@@ -23,3 +24,17 @@ Time operator*(double m, const Time &time) {
 Time::Time() {
 
 }
+
+//void operator<<(std::ostream &os, const Time &time) {
+//    os << time.hours << " hours " << time.minutes << " minutes ";
+//}
+
+std::ostream &operator<<(std::ostream &os, const Time &time) {
+    os << time.hours << " hours " << time.minutes << " minutes ";
+}
+
+Time::operator double() {
+    return 0;
+}
+
+

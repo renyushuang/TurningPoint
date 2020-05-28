@@ -1851,17 +1851,51 @@ Time Time::operator+(const Time &time) {
 
 #### 11.3.2 常用的友元：重载<<运算符
 
+##### 1.<<的第一种重载版本
+
+```c++
+friend void operator<<(std::ostream &os, const Time &time);
+```
 
 
 
+```c++
+void operator<<(std::ostream &os, const Time &time) {
+    os<<time.hours<<" hours "<<time.minutes<<" minutes ";
+}
+```
 
 
 
+##### 2.<<第二种重载方式
+
+```c++
+std::ostream &operator<<(std::ostream &os, const Time &time) {
+    os << time.hours << " hours " << time.minutes << " minutes ";
+}
+```
+
+#### 11.6.1 转换函数
+
+```c++
+// 定义
+operator double();
+```
+
+```c++
+// 实现
+Time::operator double() {
+    return 0;
+}
+```
 
 
 
+## 十二、类和动态内存分配
 
+### 12.1 动态内存和类
 
+#### 12.1.1 复习示例和静态类成员
 
 
 
