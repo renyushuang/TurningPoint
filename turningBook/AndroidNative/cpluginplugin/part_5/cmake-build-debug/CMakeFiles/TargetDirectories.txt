@@ -1,3 +1,0 @@
-/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part_5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part_5/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/renyushuang/current/TurningPoint/turningBook/AndroidNative/part_5/cmake-build-debug/CMakeFiles/part_5.dir

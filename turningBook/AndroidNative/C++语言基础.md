@@ -1239,6 +1239,122 @@ int main() {
 
 ## 五、循环和关系表达式
 
+c++不能放弃，从跳跃的地方重新开始，学习不能着急，稳中求成
+
+### 5.1 for循环
+
+```c++
+for (int i = 0; i < 5; i++) {
+
+}
+```
+
+
+
+#### 5.1.4 使用for循环访问字符串
+
+```c++
+string word = "Hello, World!";
+
+for (int i = 0; i < word.size(); i++) {
+    cout << "打印 = " << word[i] << endl;
+}
+```
+
+#### 5.1.1 递增运算符（++）和递减运算符（--）
+
+```C++
+int a = 20;
+int b = 10;
+
+a++;
+b++;
+a--;
+b--;
+++a;
+++b;
+--a;
+--b;
+```
+
+#### 5.1.11 其他语法技巧—逗号运算符
+
+```c++
+// 类似于这样
+for (int j = 0, i = word.size() - 1; j < i; --i, ++j) {
+
+}
+```
+
+#### 5.1.14 C-风格字符串的比较
+
+```c++
+// == 0 相等 ！=0 不想等 str1在str2前面则<0
+strcmp(str1, str2) != 0
+```
+
+#### 5.1.15 比较string类字符串
+
+```c++
+string word = "Hello, World!";
+
+if (word == "Hello, World!") {
+    cout << "相等" << endl;
+}
+```
+
+### 5.2 while 循环
+
+```c++
+char name[] = "11111";
+int i = 0;
+while (name[i] != '\0') {
+    cout << name[i];
+    i++;
+}
+```
+
+#### 5.2.2 等待一段时间：编写延时循环
+
+```c++
+// CLOCKS_PER_SEC看当前的时间单位
+clock_t i1 = clock() / CLOCKS_PER_SEC;// 可以得到秒数
+while (clock() / CLOCKS_PER_SEC - i1 > 1000000 / CLOCKS_PER_SEC);
+```
+
+**类的别名**
+
+```c++
+// 这个方式不知道是啥
+#define BYTE char;
+// 这个方式应该是通用的方式
+typedef char byte;
+```
+
+### 5.3 do while循环
+
+```c++
+int j = 0;
+do {
+    j++;
+} while (j < 7);
+```
+
+### 5.4 基于范围的for循环(c++11)
+
+```c++
+double prices[] = {1, 2, 3, 4, 5};
+for (double price:prices) {
+
+}
+```
+
+### 5.6 嵌套循环和二维数组
+
+
+
+
+
 ## 六、分支语句和逻辑运算符
 
 
@@ -1896,12 +2012,6 @@ Time::operator double() {
 ### 12.1 动态内存和类
 
 #### 12.1.1 复习示例和静态类成员
-
-
-
-
-
-C++先学到这吧！之后再看，先看重点
 
 
 
