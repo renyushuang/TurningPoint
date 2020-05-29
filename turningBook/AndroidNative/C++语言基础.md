@@ -1351,11 +1351,76 @@ for (double price:prices) {
 
 ### 5.6 嵌套循环和二维数组
 
+```c++
+int maxTemps[4][5] = {
+        {1, 2, 3, 4, 5},
+        {1, 2, 3, 4, 5},
+        {1, 2, 3, 4, 5},
+        {1, 2, 3, 4, 5}
+};
 
+for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 5; j++) {
+        cout << "maxTemps[" << i << "][" << j << "]" << maxTemps[i][j] << " = " << endl;
+    }
+}
+```
 
 
 
 ## 六、分支语句和逻辑运算符
+
+```c++
+if (1111 == 222) {
+
+}
+```
+
+#### 6.1.1 if else 语句
+
+```c++
+if(statement){
+    
+} else{
+    
+}
+```
+
+### 6.2 逻辑表达式
+
+#### 6.2.1 逻辑OR运算符：||
+
+#### 6.2.2 逻辑AND运算符：&&
+
+#### 6.2.4 逻辑NOT运算符：!
+
+### 6.3 字符函数库cctype
+
+### 6.4 ?:运算符
+
+### 6.5 switch 语句
+
+### 6.6 break 和continue语句
+
+#### 6.8.2 写入到文本文件中
+
+```c++
+#include <iostream>
+#include <fstream>
+#include <cctype>
+
+int main() {
+
+    std::ofstream outfile;
+    outfile.open("carnf.txt");
+
+    outfile << "name";
+    outfile << "renyushuang" ;
+    outfile.close();
+
+    return 0;
+}
+```
 
 
 
