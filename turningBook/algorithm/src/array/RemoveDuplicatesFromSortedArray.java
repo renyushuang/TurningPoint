@@ -14,9 +14,23 @@ public class RemoveDuplicatesFromSortedArray {
     public static void main(String[] args) {
         System.out.println("开始第一个编程");
         int[] A = {1, 1, 2};
-
-
-
+        System.out.println("length = " + removeDuplicatesFromSortedArray(A));
 
     }
+
+    private static int removeDuplicatesFromSortedArray(int[] array) {
+        int length = 0;
+        int temp = -1;
+
+        for (int value : array) {
+            if (value != temp) {
+                temp = value;
+                length++;
+            }
+        }
+
+        return length;
+    }
+
+
 }

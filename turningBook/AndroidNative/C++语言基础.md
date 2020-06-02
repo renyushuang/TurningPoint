@@ -1933,6 +1933,82 @@ Stock::~Stock() {
 
 ### 10.4 this指针
 
+进行两个对象的比较，选择最大的，不知道返回什么了？？？
+
+```c++
+// const 本意是不变的意思 在c++中修饰内置类型变量，自定义对象，成员函数，返回值，函数参数
+// const https://www.runoob.com/w3cnote/cpp-const-keyword.html
+const Stock &Stock::top_val(const Stock &s) {
+    if (s.total_val > total_val) {
+        return s;
+    }
+    return ？？？;
+}
+```
+
+那么c++的this指针可以解决这个问题
+
+```c++
+#include "Stock.h"
+// const 本意是不变的意思 在c++中修饰内置类型变量，自定义对象，成员函数，返回值，函数参数
+// const https://www.runoob.com/w3cnote/cpp-const-keyword.html
+const Stock &Stock::top_val(const Stock &s) {
+    if (s.total_val > total_val) {
+        return s;
+    }
+    return *this;
+}
+```
+
+### 10.5 对象数组
+
+```c++
+// 调用默认的构造函数
+Stock stocks[4];
+// 用构造函数初始化元素
+Stock stocks1[4] = {
+        Stock(1),
+        Stock(2),
+        Stock(),
+        Stock(4),
+};
+```
+
+### 10.6 类的作用域
+
+#### 10.6.1 作用域为类的常量
+
+1.使用枚举
+
+```c++
+class Bakery {
+private:
+    enum {
+        Months = 12,
+    };
+};
+```
+
+2.使用关键字static
+
+```c++
+class Bakery {
+private:
+    enum {
+        Months = 12,
+    };
+    static const int months = 12;
+};
+```
+
+### 10.6.2 作用域枚举(c++11)
+
+
+
+
+
+
+
 ## 十一、使用类
 
 ### 11.1 运算符重载
@@ -2126,16 +2202,6 @@ Time::operator double() {
     return 0;
 }
 ```
-
-
-
-## 十二、类和动态内存分配
-
-### 12.1 动态内存和类
-
-#### 12.1.1 复习示例和静态类成员
-
-## 十三、类继承
 
 
 
