@@ -2003,6 +2003,47 @@ private:
 
 ### 10.6.2 作用域枚举(c++11)
 
+传统的枚举存在一些问题：
+
+- 两个枚举定义中的枚举量可能发生冲突
+
+```c++
+enum t_shit {
+    Small
+};
+// 位于相同的作用域所以会发生冲突
+enum egg {
+    Small
+};
+```
+
+```c++
+// 使用class 或者struct来进行更改作用域
+enum class t_shit {
+    Small
+};
+enum class egg {
+    Small
+};
+```
+
+
+
+隐式转换和强制转换
+
+```c++
+// 不带class的
+aaaa a = aaaa::Months;
+int b = a;
+// class 强制转换
+t_shit shit = t_shit::Small;
+int frodo = int(shit);
+```
+
+### 10.7 抽象数据类型
+
+
+
 
 
 
@@ -2202,6 +2243,207 @@ Time::operator double() {
     return 0;
 }
 ```
+
+
+
+## 十二、类和动态内存分配
+
+### 12.1 动态内存和类
+
+#### 12.1.1复习示例和静态成员
+
+```c++
+//
+// Created by 任玉双 on 2020/6/3.
+//
+
+#ifndef PART_12_STRINGBAD_H
+#define PART_12_STRINGBAD_H
+
+#include "ostream"
+
+class StringBad {
+private:
+    char *str;
+    int length;
+    static int num_strings;
+
+public:
+    StringBad(char *str);
+
+    StringBad();
+
+    ~StringBad();
+
+    friend std::ostream& operator<<(std::ostream &os, StringBad &stringBad);
+
+};
+
+
+#endif //PART_12_STRINGBAD_H
+```
+
+```c++
+//
+// Created by 任玉双 on 2020/6/3.
+//
+
+#include "StringBad.h"
+#include "ostream"
+
+StringBad::StringBad(char *str) {
+
+}
+
+StringBad::StringBad() {
+
+
+}
+
+StringBad::~StringBad() {
+
+
+}
+
+std::ostream &operator<<(std::ostream &os, StringBad &stringBad) {
+    os<<stringBad.str;
+    return os;c
+}
+```
+
+
+
+#### 12.1.2 特殊成员函数
+
+- 默认构造函数
+- 默认析构函数函数
+- 复制构造函数
+- 赋值运算符
+- 地址运算符
+
+##### 1.默认构造函数
+
+```c++
+StringBad::StringBad() {
+
+
+}
+```
+
+##### 2.复制构造函数
+
+用于讲一个对象复制到新的对象中
+
+```c++
+StringBad::StringBad(const StringBad &stringBad) {
+
+
+}
+```
+
+##### 3何时调用复制函数
+
+##### 4.默认的复制构造函数
+
+- 默认复制构造函数逐个复制非静态成员
+
+- 静态成员是属于整个类的不是属于对象的
+
+#### 12.1.3 复制函数哪里出了问题
+
+- 因为没有声明复制函数，此时程序会创建比正常情况下多两个对象，导致num_strings变成了负数
+
+- 字符串乱码，不是真复制，而是指向了相同的指针
+
+#### 1. 定义一个显示复制构造函数以解决问题
+
+```c++
+StringBad::StringBad(const StringBad &stringBad) {
+    num_strings++;
+    length = stringBad.length;
+    str = new char[length + 1];
+    std::strcpy(str, stringBad.str);
+
+}
+```
+
+深度复制和浅复制
+
+
+
+### 12.1.4 Stringbad的其他问题：赋值运算符
+
+```c++
+StringBad &operator=(const StringBad &stringBad);
+```
+
+#### 1.赋值运算符的功能以及何时使用它
+
+将已有的对象赋给另一个对象时，使用重载的赋值运算符
+
+#### 2.赋值的问题出在哪里
+
+出现的问题和复制函数是一样的
+
+#### 3.解决赋值的问题
+
+- 由于目标对象可能引用了以前分配的数据，所以函数应使用delete[]来释放这些数据
+- 函数应当避免将对象赋给自身；否则，给对象重新赋值前，释放内存操作可能删除对象的内容
+- 函数返回一个指向调用对象的引用
+
+修改方式
+
+```c++
+StringBad &StringBad::operator=(const StringBad &stringBad) {
+    if (this == &stringBad) {
+        return *this;
+    }
+    delete[]str;
+    num_strings++;
+    length = stringBad.length;
+    str = new char[length + 1];
+    std::strcpy(str, stringBad.str);
+    return *this;
+}
+```
+
+
+
+### 12.2 改进后的新String
+
+#### 1.2.2 比较成员函数
+
+#### 12.2.3 使用中括号表示法访问字符串
+
+#### 12.2.4 静态类成员函数
+
+### 12.2.5 进一步重载赋值运算符
+
+
+
+为什么不看12章了，因为之后的章节是对上一个章节的练习。
+
+
+
+## 十三、类继承
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
