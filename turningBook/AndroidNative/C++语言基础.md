@@ -2427,6 +2427,195 @@ StringBad &StringBad::operator=(const StringBad &stringBad) {
 
 ## 十三、类继承
 
+### 13.1 一个简单的基类
+
+```c++
+class TableTennisPlayer {
+private:
+    std::string firstName;
+    std::string lastName;
+    bool hasTable;
+public:
+    TableTennisPlayer(std::string &firstName,std::string &lastName,bool &hasTable);
+    void Name();
+
+    bool HasTable() const {
+        return hasTable;
+    }
+};
+```
+
+#### 13.1.1 派生一个类
+
+```c++
+#include "TableTennisPlayer.h"
+// 派生类对象存储了基类的数据成员
+// 派生类对象可以使用基类方法
+class RatePlayer : public TableTennisPlayer {
+private:
+    int rating;
+
+public:
+    RatePlayer(int &rating, std::string &firstName, std::string &lastName, bool &hasTable);
+};
+```
+
+- 派生类需要自己的构造函数
+- 派生类可以根据需要添加额外的数据成员和成员函数
+
+
+
+#### 13.1.2 构造函数访问权限的考虑
+
+派生类必须使用基类的共有方法访问私有的基类成员
+
+```c++
+RatePlayer(int &rating, std::string &firstName, std::string &lastName, bool &hasTable) : TableTennisPlayer(
+        firstName, lastName, hasTable) {
+    this->rating = rating;
+}
+```
+
+#### 13.1.3 使用派生类
+
+#### 13.1.4 派生类和基类之间的特殊关系
+
+### 13.2 继承：is-a关系
+
+- 公有继承
+  - is-a的关系，派生类对象也是一个基类对象，可以对基类对象执行的任何操作，也可以对派生类对象执行
+- 保护继承
+  - 
+- 私有继承
+
+### 13.3 多态公有继承
+
+有两种重要的机制可用于实现多态公有继承：
+
+- 在派生类中重新定义基类的方法
+- 使用虚方法
+
+**虚方法是可以根据实例对象自动选择调用哪一个方法**
+
+- 虚构造函数
+
+### 13.4 静态联编和动态联编
+
+将源代码中的函数调用解释为执行特定的函数代码为函数名联编
+
+静态联编：在编译过程中进行联编
+
+动态联编：使用哪一个函数不能够在编译时确定的，编译器不知道选择哪个类型，所以编译器必须生成能够在程序运行时选择正确的虚方法
+
+```c++
+virtual bool HasTable()  {
+    return hasTable;
+}
+```
+
+#### 13.4.1 指针和引用类型的兼容性
+
+通常c++不允许将一种类型的地址赋给另一种类型的指针，也不允许一种类型的引用指向另一种类型
+
+
+
+**派生类的实例可以指向基类**，将派生类引用或指针被称为向上转换
+
+```c++
+int rating = 1;
+std::string firstName = "";
+std::string lastName = "";
+bool hashTable = false;
+RatePlayer ratePlayer(rating, firstName, lastName, hashTable);
+TableTennisPlayer *tableTennisPlayer = &ratePlayer;
+TableTennisPlayer &tableTennisPlayer1 = ratePlayer;
+```
+
+#### 13.4.2 虚成员函数和动态联编
+
+##### 1.为什么有两种类型的联编以及为什么默认认为静态联编
+
+效率和概念模型
+
+##### 2.虚函数的工作原理
+
+为每个对象添加一个隐藏成员，隐藏成员中保存了一个指向函数地址数组的指针，这个数组称为虚函数表
+
+#### 13.4.3 有关虚函数注意事项
+
+- 基类方法的生命中使用关键字virtual可以使该方法在基类以及所有的派生类
+- 如果shying指向对象的引用或指针来调用虚方法，程序将使用对象类型定义的方法
+- 如果定义的类被用作基类，则应将那些要在派生类中新定义的方法声明成虚的
+
+##### 1.构造函数不能是虚函数
+
+##### 2.析构函数应该是虚函数
+
+##### 3.友元函数不能是虚函数(因为友元函数不是类成员)
+
+##### 4.没有重新定义
+
+##### 5.重新定义将隐藏方法（Hovel::showperks(void) hides Dwelling::showperks(int)）
+
+### 13.5 访问控制：protected
+
+protected只有派生出来的类中才会表现出来
+
+### 13.6 抽象基类
+
+##### 13.6 应用ABC的概念
+
+### 13.7 继承和动态分配内存
+
+#### 13.7.1 第一种情况：派生类不使用new
+
+没懂
+
+- 没定义析构函数，那么走基类的
+- 复制复制构造函数，也可以走基类的
+
+#### 13.7.2 第二种情况：派生类使用new
+
+这个new说的是里面的成员函数，内部赋值使用new
+
+#### 13.7.3 使用动态内存分配和友元的继承示例
+
+派生类如何访问基类的友元函数
+
+### 13.8 类的设计与回顾
+
+这个是复习我就看看，没印象的再记录
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
