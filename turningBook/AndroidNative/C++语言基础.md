@@ -2588,13 +2588,82 @@ protected只有派生出来的类中才会表现出来
 
 
 
+## 14.1 包含对象成员的类
 
 
 
+### 14.1.1 valarray类简介
+
+用于处数值，支持将所有的数组中所有元素的值相加以及在数组中找出最大和最小值等操作
+
+```c++
+#include <iostream>
+#include "valarray"
+
+using namespace std;
+
+int main() {
+//    “operator ：让您能够访问各个元素。
+//    size( )：返回包含的元素数。
+//    sum( )：返回所有元素的总和。
+//    max( )：返回最大的元素。
+//    min( )：返回最小的元素。”
+    
+    double gpa[5] = {3.1, 3.5, 2.7, 4.8, 3.8};
+    valarray<double> v1;
+    valarray<int> v2(8);
+    valarray<int> v3(10,8);
+    valarray<double> v4(gpa,4);
+    
+
+    return 0;
+}
+```
 
 
 
+### 14.1.2 Student类的设计
 
+```c++
+//
+// Created by 任玉双 on 2020/6/9.
+//
+
+#ifndef PART_14_STUDENT_H
+#define PART_14_STUDENT_H
+using namespace std;
+
+#include "string"
+#include "valarray"
+
+class Student {
+private:
+    string name;
+    valarray<double> socores;
+};
+
+
+#endif //PART_14_STUDENT_H
+```
+
+
+
+### 14.1.3 Student类示例
+
+### 14.2 私有继承
+
+“C++还有另一种实现has-a关系的途径——私有继承。使用私有继承，基类的公有成员和保护成员都将成为派生类的私有成员。这意味着基类方法将不会成为派生对”“象公有接口的一部分，但可以在派生类的成员函数中使用它们。”
+
+```c++
+class Student : private string,valarray<double>{
+private:
+    string name;
+    typedef valarray<double> ArrayDb;
+    ArrayDb scores;
+};
+```
+
+## 	16 string类和标准模版库
 
 
 
