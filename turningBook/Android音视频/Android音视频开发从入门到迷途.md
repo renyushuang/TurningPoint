@@ -16,13 +16,19 @@
 
 
 
-### 音视频学习链接
+## 音视频学习链接
+
+### 学习路线
 
 [Android 音视频开发入门指南](https://zhuanlan.zhihu.com/p/28518637)
 
 [Android 音视频学习资源汇总](https://wuzhangyang.com/2018/12/12/android-media-learn-resource/)
 
 [Android 音视频开发学习思路](https://www.cnblogs.com/renhui/p/7452572.html)
+
+### 详细资料
+
+
 
 [FFMPEG视音频编解码零基础学习方法](https://blog.csdn.net/leixiaohua1020/article/details/15811977)
 
