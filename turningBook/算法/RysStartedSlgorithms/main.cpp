@@ -1,9 +1,11 @@
 #include <iostream>
 #include "a_wertyu.h"
+#include "aa_tex.h"
+
 
 
 int main() {
-    wertyuMain();
+    texMain();
 
     return 0;
 }

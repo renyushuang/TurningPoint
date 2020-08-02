@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RysStartedSlgorithms.dir/a_wertyu.cpp.o"
+  "CMakeFiles/RysStartedSlgorithms.dir/aa_tex.cpp.o"
   "CMakeFiles/RysStartedSlgorithms.dir/main.cpp.o"
   "RysStartedSlgorithms"
   "RysStartedSlgorithms.pdb"

@@ -3,4 +3,4 @@ project(RysStartedSlgorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(RysStartedSlgorithms main.cpp a_wertyu.cpp a_wertyu.h)
+add_executable(RysStartedSlgorithms main.cpp a_wertyu.cpp a_wertyu.h aa_tex.cpp aa_tex.h)

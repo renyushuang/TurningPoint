@@ -150,6 +150,33 @@ a_wertyu.cpp.s:
 	$(MAKE) -f CMakeFiles/RysStartedSlgorithms.dir/build.make CMakeFiles/RysStartedSlgorithms.dir/a_wertyu.cpp.s
 .PHONY : a_wertyu.cpp.s
 
+aa_tex.o: aa_tex.cpp.o
+
+.PHONY : aa_tex.o
+
+# target to build an object file
+aa_tex.cpp.o:
+	$(MAKE) -f CMakeFiles/RysStartedSlgorithms.dir/build.make CMakeFiles/RysStartedSlgorithms.dir/aa_tex.cpp.o
+.PHONY : aa_tex.cpp.o
+
+aa_tex.i: aa_tex.cpp.i
+
+.PHONY : aa_tex.i
+
+# target to preprocess a source file
+aa_tex.cpp.i:
+	$(MAKE) -f CMakeFiles/RysStartedSlgorithms.dir/build.make CMakeFiles/RysStartedSlgorithms.dir/aa_tex.cpp.i
+.PHONY : aa_tex.cpp.i
+
+aa_tex.s: aa_tex.cpp.s
+
+.PHONY : aa_tex.s
+
+# target to generate assembly for a file
+aa_tex.cpp.s:
+	$(MAKE) -f CMakeFiles/RysStartedSlgorithms.dir/build.make CMakeFiles/RysStartedSlgorithms.dir/aa_tex.cpp.s
+.PHONY : aa_tex.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... a_wertyu.o"
 	@echo "... a_wertyu.i"
 	@echo "... a_wertyu.s"
+	@echo "... aa_tex.o"
+	@echo "... aa_tex.i"
+	@echo "... aa_tex.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

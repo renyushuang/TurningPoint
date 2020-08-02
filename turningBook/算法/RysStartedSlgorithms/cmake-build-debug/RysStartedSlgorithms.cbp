@@ -86,6 +86,12 @@
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/算法/RysStartedSlgorithms/a_wertyu.h">
 			<Option target="RysStartedSlgorithms"/>
 		</Unit>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/算法/RysStartedSlgorithms/aa_tex.cpp">
+			<Option target="RysStartedSlgorithms"/>
+		</Unit>
+		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/算法/RysStartedSlgorithms/aa_tex.h">
+			<Option target="RysStartedSlgorithms"/>
+		</Unit>
 		<Unit filename="/Users/renyushuang/current/TurningPoint/turningBook/算法/RysStartedSlgorithms/main.cpp">
 			<Option target="RysStartedSlgorithms"/>
 		</Unit>
