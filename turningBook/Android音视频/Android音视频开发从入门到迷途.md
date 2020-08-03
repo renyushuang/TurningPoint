@@ -22,13 +22,25 @@
 
 [Android 音视频开发入门指南](https://zhuanlan.zhihu.com/p/28518637)
 
+[Android 音视频开发学习思路](https://www.cnblogs.com/renhui/p/7452572.html)
+
+[Android 音视频开发入门指南](https://blog.51cto.com/ticktick/1956269)
+
 [Android 音视频学习资源汇总](https://wuzhangyang.com/2018/12/12/android-media-learn-resource/)
 
 [Android 音视频开发学习思路](https://www.cnblogs.com/renhui/p/7452572.html)
 
 ### 详细资料
 
+[直播架构浅析](https://www.jianshu.com/p/fd2807aa595f)
 
+[Learn OpenGL 中文](https://learnopengl-cn.github.io/)
+
+[ywl5320的专栏](https://blog.csdn.net/ywl5320)
+
+[Jhuster的专栏](https://blog.51cto.com/ticktick)
+
+[Android Graphic 架构](http://www.360doc.com/content/18/0728/17/7377734_773883264.shtml)
 
 [FFMPEG视音频编解码零基础学习方法](https://blog.csdn.net/leixiaohua1020/article/details/15811977)
 
@@ -70,6 +82,17 @@
 
 
 ## 音视频术语
+
+### 常用术语
+
+| 名次 | 解释 | 示例 | 详解 |
+| ---- | ---- | ---- | ---- |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+
+
 
 ### 视频编码
 
