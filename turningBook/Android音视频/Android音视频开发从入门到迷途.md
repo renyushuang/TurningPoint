@@ -30,6 +30,8 @@
 
 [Android 音视频开发学习思路](https://www.cnblogs.com/renhui/p/7452572.html)
 
+https://www.livevideostack.cn/news/
+
 ### 详细资料
 
 [直播架构浅析](https://www.jianshu.com/p/fd2807aa595f)
