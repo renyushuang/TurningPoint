@@ -2,20 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 音视频学习链接
 
 ### 学习路线
@@ -33,6 +19,12 @@
 https://www.livevideostack.cn/news/
 
 ### 详细资料
+
+[腾讯云](https://cloud.tencent.com/developer/search/article-%E5%8D%A1%E9%A1%BF%E7%8E%87)
+
+[七牛云技术分享：使用QUIC协议实现实时视频直播0卡顿！](https://cloud.tencent.com/developer/article/1198411)
+
+[实时音视频开发](http://www.52im.net/forum.php?mod=collection&action=view&ctid=4)
 
 [直播架构浅析](https://www.jianshu.com/p/fd2807aa595f)
 
@@ -79,7 +71,111 @@ https://www.livevideostack.cn/news/
 
 [Android视频播放软解与硬解的区别](https://blog.csdn.net/u010072711/article/details/52413766)
 
+其他资料：
 
+ **[2] 实时音视频开发的其它精华资料：** 
+
+《[即时通讯音视频开发（一）：视频编解码之理论概述](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-228-1-1.html)》
+
+ 《[即时通讯音视频开发（二）：视频编解码之数字视频介绍](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-229-1-1.html)》 
+
+《[即时通讯音视频开发（三）：视频编解码之编码基础](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-232-1-1.html)》 
+
+《[即时通讯音视频开发（四）：视频编解码之预测技术介绍](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-235-1-1.html)》 
+
+《[即时通讯音视频开发（五）：认识主流视频编码技术H.264](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-237-1-1.html)》
+
+ 《[即时通讯音视频开发（六）：如何开始音频编解码技术的学习](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-241-1-1.html)》 
+
+《[即时通讯音视频开发（七）：音频基础及编码原理入门](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-242-1-1.html)》
+
+ 《[即时通讯音视频开发（八）：常见的实时语音通讯编码标准](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-243-1-1.html)》
+
+ 《[即时通讯音视频开发（九）：实时语音通讯的回音及回音消除概述](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-247-1-1.html)》
+
+ 《[即时通讯音视频开发（十）：实时语音通讯的回音消除技术详解](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-250-1-1.html)》
+
+ 《[即时通讯音视频开发（十一）：实时语音通讯丢包补偿技术详解](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-251-1-1.html)》
+
+ 《[即时通讯音视频开发（十二）：多人实时音视频聊天架构探讨](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-253-1-1.html)》
+
+ 《[即时通讯音视频开发（十三）：实时视频编码H.264的特点与优势](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-266-1-1.html)》
+
+ 《[即时通讯音视频开发（十四）：实时音视频数据传输协议介绍](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-267-1-1.html)》 
+
+《[即时通讯音视频开发（十五）：聊聊P2P与实时音视频的应用情况](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-269-1-1.html)》
+
+ 《[即时通讯音视频开发（十六）：移动端实时音视频开发的几个建议](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-270-1-1.html)》 
+
+《[即时通讯音视频开发（十七）：视频编码H.264、VP8的前世今生](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-274-1-1.html)》 
+
+《[实时语音聊天中的音频处理与编码压缩技术简述](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-825-1-1.html)》 
+
+《[网易视频云技术分享：音频处理与压缩技术快速入门](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-678-1-1.html)》
+
+ 《[学习RFC3550：RTP/RTCP实时传输协议基础知识](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-590-1-1.html)》 
+
+《[基于RTMP数据传输协议的实时流媒体技术研究（论文全文）](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-273-1-1.html)》
+
+ 《[声网架构师谈实时音视频云的实现难点(视频采访)](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-399-1-1.html)》
+
+ 《[浅谈开发实时视频直播平台的技术要点](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-475-1-1.html)》
+
+ 《[还在靠“喂喂喂”测试实时语音通话质量？本文教你科学的评测方法！](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-507-1-1.html)》
+
+ 《[实现延迟低于500毫秒的1080P实时音视频直播的实践分享](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-528-1-1.html)》 
+
+《[移动端实时视频直播技术实践：如何做到实时秒开、流畅不卡](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-530-1-1.html)》
+
+ 《[如何用最简单的方法测试你的实时音视频方案](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-535-1-1.html)》 
+
+《[技术揭秘：支持百万级粉丝互动的Facebook实时视频直播](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-541-1-1.html)》 
+
+《[简述实时音视频聊天中端到端加密（E2EE）的工作原理](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-763-1-1.html)》
+
+ 《[移动端实时音视频直播技术详解（一）：开篇](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-853-1-1.html)》 
+
+《[移动端实时音视频直播技术详解（二）：采集](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-955-1-1.html)》
+
+ 《[移动端实时音视频直播技术详解（三）：处理](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-960-1-1.html)》 
+
+《[移动端实时音视频直播技术详解（四）：编码和封装](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-965-1-1.html)》
+
+ 《[移动端实时音视频直播技术详解（五）：推流和传输](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-967-1-1.html)》
+
+ 《[移动端实时音视频直播技术详解（六）：延迟优化](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-972-1-1.html)》 
+
+《[理论联系实际：实现一个简单地基于HTML5的实时视频直播](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-875-1-1.html)》 
+
+《[IM实时音视频聊天时的回声消除技术详解](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-939-1-1.html)》
+
+ 《[浅谈实时音视频直播中直接影响用户体验的几项关键技术指标](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-953-1-1.html)》
+
+ 《[如何优化传输机制来实现实时音视频的超低延迟？](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1008-1-1.html)》 
+
+《[首次披露：快手是如何做到百万观众同场看直播仍能秒开且不卡顿的？](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1033-1-1.html)》 
+
+《[Android直播入门实践：动手搭建一套简单的直播系统](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1154-1-1.html)》 
+
+《[网易云信实时视频直播在TCP数据传输层的一些优化思路](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1254-1-1.html)》
+
+ 《[实时音视频聊天技术分享：面向不可靠网络的抗丢包编解码器](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1281-1-1.html)》
+
+ 《[P2P技术如何将实时视频直播带宽降低75%？](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1289-1-1.html)》 
+
+《[专访微信视频技术负责人：微信实时视频聊天技术的演进](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1201-1-1.html)》
+
+ 《[腾讯音视频实验室：使用AI黑科技实现超低码率的高清实时视频聊天](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1308-1-1.html)》 
+
+《[微信团队分享：微信每日亿次实时音视频聊天背后的技术解密](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1311-1-1.html)》 
+
+《[近期大热的实时直播答题系统的实现思路与技术难点分享](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1369-1-1.html)》
+
+ 《[福利贴：最全实时音视频开发要用到的开源工程汇总](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1395-1-1.html)》 
+
+《[七牛云技术分享：使用QUIC协议实现实时视频直播0卡顿！](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fthread-1406-1-1.html)》 
+
+>> [更多同类文章 ……](https://link.jianshu.com/?t=http%3A%2F%2Fwww.52im.net%2Fforum.php%3Fmod%3Dcollection%26action%3Dview%26ctid%3D4)
 
 
 
